@@ -400,14 +400,14 @@ async function starts() {
 					if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return reply('Tag target yang ingin di promote!')
 					mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
 					if (mentioned.length > 1) {
-						teks = 'Boa, agora você é uma ademir :\n'
+						teks = 'Perintah di terima, menambah jabatan sebagai admin :\n'
 						for (let _ of mentioned) {
 							teks += `@${_.split('@')[0]}\n`
 						}
 						mentions(teks, mentioned, true)
 						client.groupMakeAdmin(from, mentioned)
 					} else {
-						mentions(`Boa, agora você é uma ademir : @${mentioned[0].split('@')[0]}`, mentioned, true)
+						mentions(`Perintah di terima, menambah jabatan sebagai admin : @${mentioned[0].split('@')[0]}`, mentioned, true)
 						client.groupMakeAdmin(from, mentioned)
 					}
 					break
@@ -962,7 +962,7 @@ async function starts() {
 					reply(mess.wait)
 					anu = await fetchJson(`https://arugaz.herokuapp.com/api/nekonime`, {method: 'get'})
 					buffer = await getBuffer(anu.result)
-					client.sendMessage(from, buffer, image,{quoted: mek, caption: `Então é disso que você gosta? hehe`})
+					client.sendMessage(from, buffer, image,{quoted: mek, caption: `Casar com 2d e fodar mais okei`})
 					break
 				case 'walpaper':
                     client.updatePresence(from, Presence.composing) 
@@ -992,9 +992,8 @@ async function starts() {
 					reply(`Prefix berhasil di ubah menjadi : ${prefix}`)
 					break
 				case 'meme':
-				case 'nosso':
 					meme = await kagApi.memes()
-					buffer = await getBuffer(`https://imgur.com/${ursal.hash}.jpg`)
+					buffer = await getBuffer(`https://imgur.com/${meme.hash}.jpg`)
 					client.sendMessage(from, buffer, image, {quoted: mek, caption: '.......'})
 					break
 				case 'memeindo':
@@ -1073,7 +1072,7 @@ async function starts() {
 								})
 								}
 						
-					mentions('╔══✪〘 Mencionando Todo Mundo! 〙✪══\n╠➥'+teks+'╚═〘 BOTNALDO PENEIRA 〙', members_id, true)
+					mentions('╔══✪〘 Mencionando Todo Mundo! 〙✪══\n╠➥'+teks+'╚═〘 Toin Bot 〙', members_id, true)
 					break
                 case 'tagall2':
 				client.updatePresence(from, Presence.composing) 
@@ -1086,7 +1085,7 @@ async function starts() {
 						teks += `╠➥ ${mem.jid.split('@')[0]}\n`
 						members_id.push(mem.jid)
 					}
-					client.sendMessage(from, '╔══✪〘 Mencionando Todo Mundo! 〙✪══\n╠➥'+teks+'╚═〘 BOTNALDO PENEIRA 〙', text, {quoted: mek})
+					client.sendMessage(from, '╔══✪〘 Mencionando Todo Mundo! 〙✪══\n╠➥'+teks+'╚═〘 Toin Bot 〙', text, {quoted: mek})
 					break
                 case 'tagall3':
 				client.updatePresence(from, Presence.composing) 
@@ -1099,7 +1098,7 @@ async function starts() {
 						teks += `╠➥ https://wa.me/${mem.jid.split('@')[0]}\n`
 						members_id.push(mem.jid)
 					}
-					client.sendMessage(from, '╔══✪〘 Mencionando Todo Mundo! 〙✪══\n╠➥'+teks+'╚═〘 BOTNALDO PENEIRA 〙', text, {detectLinks: false, quoted: mek})
+					client.sendMessage(from, '╔══✪〘 Mencionando Todo Mundo! 〙✪══\n╠➥'+teks+'╚═〘 Toin BOT 〙', text, {detectLinks: false, quoted: mek})
 					break
                         case 'tagall4':
 				client.updatePresence(from, Presence.composing) 
@@ -1112,7 +1111,7 @@ async function starts() {
 						teks += `╠➥ ${mem.jid.split('@')[0]}@c.us\n`
 						members_id.push(mem.jid)
 					}
-					client.sendMessage(from, '╔══✪〘 Mencionando Todo Mundo! 〙✪══\n╠➥'+teks+'╚═〘 BOTNALDO PENEIRA 〙', text, {quoted: mek})
+					client.sendMessage(from, '╔══✪〘 Mencionando Todo Mundo! 〙✪══\n╠➥'+teks+'╚═〘 Toin BOT 〙', text, {quoted: mek})
 					break
                 case 'tagall5':
 				client.updatePresence(from, Presence.composing) 
@@ -1125,7 +1124,7 @@ async function starts() {
 						teks += `╠➥ ${mem.jid.split('@')[0]}@s.whatsapp.net\n`
 						members_id.push(mem.jid)
 					}
-					reply('╔══✪〘 Mencionando Todo Mundo 〙✪══\n╠➥'+teks+'╚═〘 BOTNALDO PENEIRA 〙')
+					reply('╔══✪〘 Mencionando Todo Mundo 〙✪══\n╠➥'+teks+'╚═〘 Toin BOT 〙')
 					break
 				case 'send':
 					var pc = body.slice(6)
@@ -1322,14 +1321,14 @@ async function starts() {
 					if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return reply('Tag target yang ingin di tendang!')
 					mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
 					if (mentioned.length > 1) {
-						teks = 'Seu pedido é uma ordem, adeus :\n'
+						teks = 'Perintah di terima, mengeluarkan :\n'
 						for (let _ of mentioned) {
 							teks += `@${_.split('@')[0]}\n`
 						}
 						mentions(teks, mentioned, true)
 						client.groupRemove(from, mentioned)
 					} else {
-						mentions(`Seu pedido é uma ordem, adeus : @${mentioned[0].split('@')[0]}`, mentioned, true)
+						mentions(`Perintah di terima, mengeluarkan : @${mentioned[0].split('@')[0]}`, mentioned, true)
 						client.groupRemove(from, mentioned)
 					client.sendMessage(mentioned, 'yahaha Lu kekick😂', text)
 					}
@@ -1448,12 +1447,9 @@ async function starts() {
 					client.sendMessage(from, open, text, {quoted: mek})
 					break
 				case 'stiker':
-				case 's':
-				case 'f':
-				case 'fig':
 				case 'sticker':
-				case 'stickergif':
-				case 'stikergif':
+				case 'fig':
+				case 's':
 					if ((isMedia && !mek.message.videoMessage || isQuotedImage) && args.length == 0) {
 						const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
 						const media = await client.downloadAndSaveMediaMessage(encmedia)
@@ -1531,9 +1527,9 @@ async function starts() {
 					ran = getRandom('.png')
 					exec(`ffmpeg -i ${media} ${ran}`, (err) => {
 						fs.unlinkSync(media)
-						if (err) return reply('❌ Ei, esse tipo de figura não é compatível ❌')
+						if (err) return reply('❌ Gagal, pada saat mengkonversi sticker ke gambar ❌')
 						buffer = fs.readFileSync(ran)
-						client.sendMessage(from, buffer, image, {quoted: mek, caption: 'Aqui está'})
+						client.sendMessage(from, buffer, image, {quoted: mek, caption: '>//<'})
 						fs.unlinkSync(ran)
 					})
 					break
@@ -1800,7 +1796,7 @@ async function starts() {
 				default:
 
    				         if (body.startsWith(`${prefix}${command}`)) {
-                  reply(`Está *${pushname}*, o Comando *${prefix}${command}* Para ver os comandos use *${prefix}menu*!`)
+                  reply(`Maaf *${pushname}*, Command *${prefix}${command}* Tidak Terdaftar Di Dalam *${prefix}menu*!`)
                                         }
 					if (isGroup && isSimi && budy != undefined) {
 						console.log(budy)
