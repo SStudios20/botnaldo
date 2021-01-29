@@ -236,7 +236,7 @@ async function starts() {
 			const isCmd = body.startsWith(prefix)
 
 			mess = {
-				wait: '⌛ É PRA JÁ PARÇA ⌛',
+				wait: '⌛ ESPERE UM POUCO AE MANO ⌛',
 				success: '✔️ Sucesso ✔️',
 				levelon: '❬ ✔ ❭ *Ativado leveling*',
 				leveloff: ' ❬ X ❭  *Desativado leveling*',
@@ -1448,8 +1448,8 @@ async function starts() {
 					break
 				case 'stiker':
 				case 'sticker':
-				case 'fig':
-				case 's':
+				case 'stickergif':
+				case 'stikergif':
 					if ((isMedia && !mek.message.videoMessage || isQuotedImage) && args.length == 0) {
 						const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
 						const media = await client.downloadAndSaveMediaMessage(encmedia)
